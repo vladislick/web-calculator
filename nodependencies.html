@@ -65,7 +65,7 @@
       var number1 = 0;
       var number2 = 0;
 
-      document.body.style.zoom = screen.logicalXDPI / screen.deviceXDPI;
+      if (screen.height > screen.width) document.body.style.zoom = 2.0;
 
       ///Вывод символа в строку ввода
       function input(_inchar) {
