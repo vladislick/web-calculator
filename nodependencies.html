@@ -2,8 +2,97 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #303030 fixed center;
+        height: 100%;
+      }
+
+      .header {
+        text-align: center;
+        color: #f0f0f0;
+        padding: 20px;
+        font-size: 18pt;
+        font-family: monospace;
+        margin-bottom: 30px;
+      }
+
+      .calcbutton {
+        width: 70px;
+        height: 70px;
+        font-size: 20pt;
+        font-weight: bold;
+        margin: 2px;
+        cursor: pointer;
+        background-color: #404040;
+        color: #f0f0f0;
+      }
+
+      .resultview {
+        width: 276px;
+        margin: 2px 2px 20px 2px;
+        padding: 10px;
+        font-size: 28pt;
+        font-weight: bold;
+        background-color: #404040;
+        color: #f0f0f0;
+      }
+
+      .main {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #808080;
+        padding: 10px;
+      }
+
+      .footer {
+        margin-top: 540px;
+        text-align: center;
+        color: #f0f0f0;
+        padding: 20px;
+        font-size: 18pt;
+      }
+    </style>
+    <script>
+      //Была ли уже дробная точка в числе
+      var isdouble = 0;
+      var number1 = 0;
+      var number2 = 0;
+
+      ///Вывод символа в строку ввода
+      function input(_inchar) {
+        if (_inchar == ".") {
+          if (isdouble) return;
+          else isdouble = 1;
+        }
+        else if (_inchar == "0") {
+          if (document.resultform.resultview.value.length == 0) return;
+        }
+
+        if (document.resultform.resultview.value.length < (12 + isdouble)) {
+            document.resultform.resultview.value += _inchar;
+        }
+      }
+
+      ///Очистка ввода
+      function clean() {
+        isdouble = 0;
+        document.resultform.resultview.value = "";
+      }
+
+      ///Убирает один символ со строки ввода
+      function back() {
+        var str = document.resultform.resultview.value;
+        if (str[str.length - 1] == ".") isdouble = 0;
+        document.resultform.resultview.value = str.substr(0, str.length - 1);
+      }
+    </script>
     <title>Calculator-on-JS</title>
   </head>
   <body>

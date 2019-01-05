@@ -14,7 +14,6 @@ function input(_inchar) {
   }
 
   if (document.resultform.resultview.value.length < (12 + isdouble)) {
-      if (isdouble) if ()
       document.resultform.resultview.value += _inchar;
   }
 }
