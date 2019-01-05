@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Calculator-on-JS</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Калькулятор</h1>
+    </div>
+    <div class="main">
+      <form name="resultform">
+        <input readonly=true name="resultview" class="resultview" type="text">
+      </form>
+      <table>
+        <tr>
+          <td><input class="calcbutton" type="button" onclick="clean()" value="C"></td>
+          <td><input class="calcbutton" type="button" onclick="back()" value="<"></td>
+          <td><input class="calcbutton" type="button" value="/"></td>
+          <td><input class="calcbutton" type="button" value="x"></td>
+        </tr>
+        <tr>
+          <td><input class="calcbutton" type="button" onclick="input(7)" value="7"></td>
+          <td><input class="calcbutton" type="button" onclick="input(8)" value="8"></td>
+          <td><input class="calcbutton" type="button" onclick="input(9)" value="9"></td>
+          <td><input class="calcbutton" type="button" value="-"></td>
+        </tr>
+        <tr>
+          <td><input class="calcbutton" type="button" onclick="input(4)" value="4"></td>
+          <td><input class="calcbutton" type="button" onclick="input(5)" value="5"></td>
+          <td><input class="calcbutton" type="button" onclick="input(6)" value="6"></td>
+          <td><input class="calcbutton" type="button" value="+"></td>
+        </tr>
+        <tr>
+          <td><input class="calcbutton" type="button" onclick="input(1)" value="1"></td>
+          <td><input class="calcbutton" type="button" onclick="input(2)" value="2"></td>
+          <td><input class="calcbutton" type="button" onclick="input(3)" value="3"></td>
+          <td rowspan=2><input style="height: 146px" class="calcbutton" type="button" value="="></td>
+        </tr>
+        <tr>
+          <td colspan=2><input style="width: 146px" class="calcbutton" type="button" onclick="input(0)" value="0"></td>
+          <td><input class="calcbutton" type="button" onclick="input('.')" value="."></td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer">
+      <p>by @vladislick</p>
+    </div>
+  </body>
+</html>
